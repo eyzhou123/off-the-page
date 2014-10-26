@@ -1,0 +1,14 @@
+DESIGN DESCRIPTIONS:
+
+What problem I am solving:
+I am trying to make something that allows you to quickly bring a drawing to life without having to go through the time consuming process of making multiple frames yourself. Furthermore, I am allowing the user to interact with his/her character, thereby allowing it to come "off the page".
+
+
+How I am solving my problem:
+First, in order for the user to scan a drawing, I had to use OpenCV to allow the user to manually enter in the image of his/her choice. Then, my code aims to generalize all characters by storing basic coordinates (where the character is, where the leg is, the width of the leg and the width of the body). Then, it creates 3 main leg shapes based off of the leg drawn by the user. Using these shapes, the program creates frames by moving/rotating the body and legs based off the coordinates it stored earlier. With these frames, the program simply generates animated GIF files and, in the Interact with Character page, allows the user to control what the character does (by looping through certain frames based on the actions the user wants the character to perform).
+
+Main Functions/Algorithmic Aspects: ConvertLegToImages, makeFrame1 (and other frame-making functions), helper functions such as GetRidOfArea and MakeBackgroundTransparent, calculating left and right bounds of images so that the character bounces back and forth in Interact mode, using conditionals to guide user through animating procedure
+
+
+Reasons behind my user interface:
+I am attempting to make my program as simple as possible. There are two main procedures: 1) Scanning a drawing and 2) Making that drawing move. After scanning a drawing into the program, the user is told how to mark coordinates and, after this brief process, the user is already left to play with the character. My program was originally intended to be modeled after Stykz, so I originally planned to have the user make animations frame by frame (by moving individual joints one at a time). However, even this seems too painstaking of a process, thus my program eliminates this large amount work (but with obvious limitations as a result). 
